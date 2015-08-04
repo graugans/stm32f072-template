@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (10.4.2)
+    rakeoe (0.0.11)
+      rake (~> 10)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rakeoe
