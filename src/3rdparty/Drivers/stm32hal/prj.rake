@@ -8,6 +8,7 @@ PRJ_TYPE = 'LIB'
 # Additional white space separated list of sub directories this project uses for finding source files.
 # By default only sources in the projects top directory will be used for compilation.
 ADD_SOURCE_DIRS = 'STM32F0xx_HAL_Driver
+                   STM32F0xx_HAL_Driver/Src
                    CMSIS/Device/ST/STM32F0xx/Include
                    CMSIS/Device/ST/STM32F0xx/Source/Templates
                    CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc'
