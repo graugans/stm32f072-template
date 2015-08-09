@@ -18,9 +18,9 @@ export SIZE="arm-none-eabi-size"
 export M4=
 export TARGET_PREFIX=arm-none-eabi-
 export CONFIGURE_FLAGS=
-export CFLAGS=" -std=gnu99 -mcpu=cortex-m0 -mthumb -fno-omit-frame-pointer -fdata-sections -ffunction-sections -D__ASSEMBLY__ -DSTM32F072X -DSTM32F072 -DSTM32F072xB -DUSE_HAL_DRIVER"
-export CXXFLAGS=" -mcpu=cortex-m0 -mthumb -fno-omit-frame-pointer -fdata-sections -ffunction-sections -D__ASSEMBLY__"
-export LDFLAGS=' -mcpu=cortex-m0 -mthumb -g -nostartfiles -Wl,--gc-sections -Xlinker -Tlinker/stm32f072_linker.ld'
+export CFLAGS=" -Wall -W -std=gnu99 -mcpu=cortex-m0 -mthumb -fno-omit-frame-pointer -fdata-sections -ffunction-sections -DTOOLCHAIN_GCC_ARM -DTOOLCHAIN_GCC -DUSE_HAL_DRIVER -DSTM32F072X -DSTM32F072 -DSTM32F072xB"
+export CXXFLAGS=" $CFLAGS -fno-rtti -fno-exceptions"
+export LDFLAGS=' -mcpu=cortex-m0 -mthumb -g -Wl,--gc-sections --specs=nano.specs -Xlinker -Tlinker/stm32f072_linker.ld'
 export CPPFLAGS=
 export OECORE_NATIVE_SYSROOT=
 export OECORE_TARGET_SYSROOT=
