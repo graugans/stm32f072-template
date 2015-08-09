@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1592670738/TOOLCHAIN_ENV/delimiter=\:
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1592670738/TOOLCHAIN_ENV/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1592670738/TOOLCHAIN_ENV/value=${ProjDirPath}/platform/environment-arm-stm32f072-eabi.${HostOsName}
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1592670738/TOOLCHAIN_PATH/delimiter=\:
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1592670738/TOOLCHAIN_PATH/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1592670738/TOOLCHAIN_PATH/value=/opt/gcc-arm-none-eabi-4_8-2014q3/
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1592670738/append=true
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1592670738/appendContributed=true
