@@ -34,7 +34,7 @@ ADD_CFLAGS = ''
 # from other subprojects or external libraries. In case of the former the include/ directory of that library
 # is used for compilation as well. Used for all platforms.
 # e.g. 'pthread rt m'
-ADD_LIBS = 'printf stm32hal m c gcc nosys'
+ADD_LIBS = 'printf stm32hal drivers cmd m c gcc nosys'
 
 # Additional white space separated list of linker flags. Used for all platforms.
 ADD_LDFLAGS = ''

@@ -36,7 +36,9 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "printf.h"
+#include "tfp_printf.h"
+#include "cmd.h"
+
 #include <string.h>
 
 /* USER CODE BEGIN Includes */
@@ -65,6 +67,15 @@ void __attribute ((weak)) _init(void)
 	;
 };
 
+void test (int argc, char **argv)
+{
+    tfp_printf("This is a test command implementation: \r\n");
+    for(int i=0;i<argc;i++)
+    {
+        tfp_printf("param (%d): %s\r\n",i,argv[i]);
+    }
+}
+
 /**
  * @brief  Retargets the C library putc function to the USART.
  * @param  p    Ignored, could be used to buffer into memory
@@ -77,7 +88,7 @@ void our_putc(void* p __attribute ((unused)), char c, sprintf_state_t* state)
     {
         HAL_UART_Transmit(&huart1, (uint8_t*) &c, 1, 10);
     }
-};
+}
 
 /* USER CODE END 0 */
 
@@ -104,6 +115,9 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
   init_printf(NULL,our_putc);
+  tfp_printf("hello world\r\n");
+  cmd_init();
+  cmd_add("test",test);
 
   /* USER CODE END 2 */
 
@@ -112,7 +126,7 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-	  tfp_printf("hello world\r\n");
+      cmd_poll();
   /* USER CODE BEGIN 3 */
 
   }
