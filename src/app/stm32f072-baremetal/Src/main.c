@@ -57,6 +57,11 @@ void SystemClock_Config(void);
 
 /* USER CODE BEGIN 0 */
 
+void __attribute ((weak)) _init(void)
+{
+	;
+};
+
 /* USER CODE END 0 */
 
 int main(void)
