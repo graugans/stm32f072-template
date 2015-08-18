@@ -67,6 +67,13 @@ const char cmd_unrecog[] = "CMD: Command not recognized.";
 /**************************************************************************/
 void cmd_display_banner()
 {
+    tfp_printf("\r\n");
+    tfp_printf("%s","***************************************\r\n");
+    tfp_printf("BUILD DATE        : %s\r\n",__DATE__);
+    tfp_printf("BUILD TIME        : %s\r\n",__TIME__);
+    tfp_printf("STM32 HAL version : 0x%08X\r\n",HAL_GetHalVersion());
+    tfp_printf("STM32 Rev. ID     : 0x%08X\r\n",HAL_GetREVID());
+    tfp_printf("STM32 Dev. ID     : 0x%08X\r\n",HAL_GetDEVID());
     tfp_printf("%s\r\n",cmd_banner);
 }
 

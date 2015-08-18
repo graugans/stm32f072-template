@@ -115,7 +115,6 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
   init_printf(NULL,our_putc);
-  tfp_printf("hello world\r\n");
   cmd_init();
   cmd_add("test",test);
 
