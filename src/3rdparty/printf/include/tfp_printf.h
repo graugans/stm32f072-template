@@ -130,10 +130,6 @@ void tfp_sprintf(char* s,char *fmt, ...);
 void tfp_snprintf(char* s, size_t max_len, char *fmt, ...);
 void tfp_format(void* putp, void (*putcf) (void*,char,sprintf_state_t*), sprintf_state_t* state, const char *fmt, va_list va);
 
-#define printf tfp_printf
-#define sprintf tfp_sprintf
-#define snprintf tfp_snprintf
-
 #endif
 
 

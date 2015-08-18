@@ -29,7 +29,7 @@
  * OF SUCH DAMAGE.
  */
 
-#include "printf.h"
+#include "tfp_printf.h"
 
 typedef void (*putcf)(void*, char, sprintf_state_t*);
 static putcf stdout_putf;
