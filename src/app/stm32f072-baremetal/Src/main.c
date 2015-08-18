@@ -33,8 +33,11 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_hal.h"
 #include "i2c.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include "printf.h"
+#include <string.h>
 
 /* USER CODE BEGIN Includes */
 
@@ -62,6 +65,20 @@ void __attribute ((weak)) _init(void)
 	;
 };
 
+/**
+ * @brief  Retargets the C library putc function to the USART.
+ * @param  p    Ignored, could be used to buffer into memory
+ * @param  c    Character value to print
+ * @retval None
+ */
+void our_putc(void* p __attribute ((unused)), char c, sprintf_state_t* state)
+{
+    if ((state->buf_left == -1) || (state->buf_left-- > 0))
+    {
+        HAL_UART_Transmit(&huart1, (uint8_t*) &c, 1, 10);
+    }
+};
+
 /* USER CODE END 0 */
 
 int main(void)
@@ -82,9 +99,11 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
+  MX_TIM2_Init();
   MX_USART1_UART_Init();
 
   /* USER CODE BEGIN 2 */
+  init_printf(NULL,our_putc);
 
   /* USER CODE END 2 */
 
@@ -93,7 +112,7 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-
+	  tfp_printf("hello world\r\n");
   /* USER CODE BEGIN 3 */
 
   }
